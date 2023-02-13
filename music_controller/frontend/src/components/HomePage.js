@@ -13,6 +13,10 @@ const router = createBrowserRouter([
     element: <RoomJoinPage/>
   },
   {
+    path: "/join/1",
+    element: <p>ekd</p>
+  },
+  {
     path: "/create",
     element: <CreateRoomPage/>
   },
