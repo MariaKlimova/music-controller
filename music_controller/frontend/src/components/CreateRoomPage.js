@@ -11,13 +11,15 @@ import {
   TextField,
 } from "@material-ui/core";
 // import FormControl from '@material-ui/core'
-import { Link } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 // import FormControlLabel from '@material-ui/core'
 
 export const CreateRoomPage = (props) => {
   const defaultVotes = 2;
   const [guestCanPause, setGuestCanPause] = useState(true);
   const [votesToSkip, setVotesToSkip] = useState(defaultVotes);
+  const params = useLoaderData();
+  const navigate = useNavigate();
 
   const handleVotesChange = (e) => {
     setVotesToSkip(e.target.value);
@@ -38,7 +40,11 @@ export const CreateRoomPage = (props) => {
     };
     fetch("/api/create-room", requestOptions)
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        navigate(`/room/${data.code}`);
+        //console.log(redirect(`/room/${data.code}`));
+        //return redirect(`/room/${data.code}`)});
+      });
   };
   return (
     <Grid container spacing={1}>
