@@ -13,7 +13,7 @@ import { HomePage } from './HomePage'
 // }
 export const App  = (props)=>{
     return(
-        <div>
+        <div className="center">
             <HomePage/>
         </div>
         

@@ -18,7 +18,6 @@ export const CreateRoomPage = (props) => {
   const defaultVotes = 2;
   const [guestCanPause, setGuestCanPause] = useState(true);
   const [votesToSkip, setVotesToSkip] = useState(defaultVotes);
-  const params = useLoaderData();
   const navigate = useNavigate();
 
   const handleVotesChange = (e) => {
